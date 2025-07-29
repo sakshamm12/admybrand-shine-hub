@@ -1,11 +1,24 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-bg.jpg";
 
 export function HeroSection() {
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
+
   const scrollToFeatures = () => {
     document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleAuthAction = () => {
+    if (user) {
+      signOut();
+    } else {
+      navigate('/auth');
+    }
   };
 
   return (
@@ -80,10 +93,24 @@ export function HeroSection() {
                 size="lg" 
                 variant="outline" 
                 className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 text-lg backdrop-blur-sm"
+                onClick={handleAuthAction}
               >
-                Watch Demo
+                {user ? 'Sign Out' : 'Get Started'}
               </Button>
             </motion.div>
+
+            {user && (
+              <motion.div 
+                className="mt-4 text-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <p className="text-white/80">
+                  Welcome back, {user.email}!
+                </p>
+              </motion.div>
+            )}
           </GlassCard>
         </motion.div>
       </div>
