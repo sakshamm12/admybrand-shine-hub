@@ -74,7 +74,7 @@ export function PricingSection() {
   };
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 bg-gradient-to-br from-primary/5 to-accent/5">
       <div className="container mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -180,16 +180,12 @@ export function PricingSection() {
                 <Button 
                   className={`w-full ${
                     plan.popular 
-                      ? 'bg-accent hover:bg-accent-glow shadow-glow text-accent-foreground' 
-                      : 'bg-white/10 hover:bg-white/20 text-white border border-white/20'
+                      ? 'bg-primary hover:bg-primary-glow shadow-glow' 
+                      : 'bg-secondary hover:bg-secondary/80'
                   } transition-all duration-300`}
                   size="lg"
-                  onClick={() => {
-                    // Handle plan selection - could navigate to signup with selected plan
-                    console.log(`Selected plan: ${plan.name}`);
-                  }}
                 >
-                  Choose {plan.name}
+                  Get Started
                 </Button>
               </GlassCard>
             </motion.div>
