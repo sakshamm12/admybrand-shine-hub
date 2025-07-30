@@ -10,21 +10,21 @@ const footerLinks = {
     { name: "Documentation", href: "#docs" }
   ],
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Careers", href: "#careers" },
-    { name: "Press", href: "#press" },
-    { name: "Partners", href: "#partners" }
+    { name: "About Us", href: "/about" },
+    { name: "Careers", href: "/careers" },
+    { name: "Press", href: "/press" },
+    { name: "Stats", href: "/stats" }
   ],
   support: [
-    { name: "Help Center", href: "#help" },
+    { name: "Help Center", href: "/help" },
     { name: "Contact", href: "#contact" },
     { name: "Status", href: "#status" },
     { name: "Community", href: "#community" }
   ],
   legal: [
-    { name: "Privacy Policy", href: "#privacy" },
-    { name: "Terms of Service", href: "#terms" },
-    { name: "Security", href: "#security" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Security", href: "/security" },
     { name: "Compliance", href: "#compliance" }
   ]
 };
